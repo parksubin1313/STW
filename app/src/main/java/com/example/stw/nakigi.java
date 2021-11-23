@@ -30,7 +30,6 @@ public class nakigi extends AppCompatActivity {
     DatabaseReference reference;
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
