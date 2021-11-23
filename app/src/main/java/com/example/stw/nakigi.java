@@ -1,0 +1,131 @@
+package com.example.stw;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.DatePickerDialog;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.view.View;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.ImageView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
+
+public class nakigi extends AppCompatActivity {
+
+    EditText text, timer;
+    String memory, date, uid;
+    String date2;
+    DatabaseReference reference;
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_nakigi);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
+        // Get the ID of the currently connected user
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser(); // Get information of logged in user
+        uid = user != null ? user.getUid() : null; // Get the unique uid of the logged-in user
+
+        text = findViewById(R.id.memory);
+        timer = findViewById(R.id.timer);
+
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        editor = preferences.edit();
+
+        Calendar cal = Calendar.getInstance();
+        int mYear = cal.get(Calendar.YEAR);
+        int mMonth = cal.get(Calendar.MONTH);
+        int mDay = cal.get(Calendar.DAY_OF_MONTH);
+
+        timer.setText(cal.get(Calendar.YEAR) +"-"+ (cal.get(Calendar.MONTH)+1) +"-"+ cal.get(Calendar.DATE));
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this, R.style.MySpinnerDatePickerStyle, new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                timer.setText(year +"-"+ (month+1) +"-"+ dayOfMonth);
+            }
+        }, mYear, mMonth, mDay);
+
+
+        timer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (timer.isClickable()) {
+                    datePickerDialog.show();
+                }
+            }
+        });
+
+        ImageView send = findViewById(R.id.send);
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                save();
+                //Intent intent = new Intent(nagiki.this, nakigi_saying.class);
+                Intent intent = new Intent(nakigi.this, checkNakigi.class);
+
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
+
+    // Data storage and modification method
+    public void postFirebaseDataBase(boolean add) {
+
+        reference = FirebaseDatabase.getInstance().getReference();
+        Map<String, Object> childUpdates = new HashMap<>();
+        Map<String, Object> postValues = null;
+        if (add) {
+            FirebasePost post = new FirebasePost(memory, date);
+            postValues = post.toMap();
+        }
+
+        childUpdates.put("/Nakigi/" + uid + "/" + date + "/", postValues);
+        reference.updateChildren(childUpdates);
+    }
+
+    // Save to Firebase
+    public void save() {
+        memory = String.valueOf(text.getText());
+        date = String.valueOf(timer.getText());
+        postFirebaseDataBase(true);
+    }
+
+    public class FirebasePost {
+
+        public String memory;
+        public String date;
+
+        public FirebasePost(String memory, String date) {
+            this.memory = memory;
+            this.date = date;
+        }
+
+        public Map<String, Object> toMap() {
+            HashMap<String, Object> result = new HashMap<>();
+            result.put("memory", memory);
+            result.put("date", date);
+            return result;
+        }
+
+    }
+}
