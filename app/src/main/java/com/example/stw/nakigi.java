@@ -1,5 +1,6 @@
 package com.example.stw;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +9,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -15,8 +17,11 @@ import android.widget.ImageView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -25,11 +30,11 @@ import java.util.Map;
 public class nakigi extends AppCompatActivity {
 
     EditText text, timer;
-    String memory, date, uid;
-    String date2;
+    String memory, date, uid, curDate;
     DatabaseReference reference;
-    SharedPreferences preferences;
-    SharedPreferences.Editor editor;
+    private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference mReference = mDatabase.getReference();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,15 +50,42 @@ public class nakigi extends AppCompatActivity {
         text = findViewById(R.id.memory);
         timer = findViewById(R.id.timer);
 
-        preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        editor = preferences.edit();
-
         Calendar cal = Calendar.getInstance();
         int mYear = cal.get(Calendar.YEAR);
         int mMonth = cal.get(Calendar.MONTH);
         int mDay = cal.get(Calendar.DAY_OF_MONTH);
 
         timer.setText(cal.get(Calendar.YEAR) +"-"+ (cal.get(Calendar.MONTH)+1) +"-"+ cal.get(Calendar.DATE));
+
+        curDate = String.valueOf(timer.getText());
+
+        //If memory is exist on today, load nakigiPopup
+        mReference.child("Nakigi").child(uid).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if(snapshot.hasChild(curDate))
+                {
+                    Intent intent = new Intent(nakigi.this, nakigiPopup.class);
+                    startActivity(intent);
+                }
+                else{
+                    //Intent intent = new Intent(nakigi.this, nakigi.class);
+                    //startActivity(intent);
+                    //finish();
+                }
+                /*
+                memoryList group = snapshot.getValue(memoryList.class);
+                memory = group.getMemory();
+*/
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+                Log.e("MainActivity", String.valueOf(error.toException()));
+            }
+        });
 
         DatePickerDialog datePickerDialog = new DatePickerDialog(this, R.style.MySpinnerDatePickerStyle, new DatePickerDialog.OnDateSetListener() {
 
@@ -78,9 +110,29 @@ public class nakigi extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 save();
-                //Intent intent = new Intent(nagiki.this, nakigi_saying.class);
-                Intent intent = new Intent(nakigi.this, checkNakigi.class);
+                //Intent intent = new Intent(nakigi.this, nakigiSaying.class);
+                Intent intent = new Intent(nakigi.this, nakigiSaying.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
+        //------하단바------
+        ImageView bottomUserpage = (ImageView) findViewById(R.id.mypage);
+        bottomUserpage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(nakigi.this, userPage.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        ImageView bottomDiary = (ImageView) findViewById(R.id.diary);
+        bottomDiary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(nakigi.this, diary.class);
                 startActivity(intent);
                 finish();
             }
@@ -127,4 +179,5 @@ public class nakigi extends AppCompatActivity {
         }
 
     }
+
 }

@@ -3,11 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/font/font.xml" value="0.1" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_check_nakigi.xml" value="0.1" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_common_diary.xml" value="0.21197916666666666" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_diary.xml" value="0.10625" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_main.xml" value="0.2390625" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_nakigi.xml" value="0.1" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_nakigi_popup.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_nakigi_saying.xml" value="0.1" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_nakigi_storage.xml" value="0.2" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_new_login.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_new_signup.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_personal_diary.xml" value="0.1" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_personal_storage.xml" value="0.1" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_signup.xml" value="0.1" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_user_page.xml" value="0.234375" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/toolbar_main.xml" value="0.4" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/menu/menu_main.xml" value="0.1" />
       </map>
     </option>
   </component>

@@ -7,8 +7,6 @@
     android:orientation="vertical"
     android:backgroundTint="@color/white"
     >
-
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -66,7 +64,7 @@
         <TextView
             android:layout_width="260dp"
             android:layout_height="60dp"
-            android:text="당신의 나쁜 기억을 적어주세요"
+            android:text="날짜를 선택해주세요"
             android:textStyle="bold"
             android:layout_gravity="center_horizontal"
             android:textSize="13dp"
@@ -78,13 +76,12 @@
         </TextView>
 
         <EditText
-            android:id="@+id/memory"
+            android:id="@+id/timer"
             android:layout_width="260dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="80dp"
             android:textColor="#6f6f6f"
-            android:hint="오늘은 무슨 일이 있었나요"
             android:backgroundTint="#A5A5A5"
             android:textSize="12dp"
             android:textColorHint="#A5A5A5"
@@ -94,11 +91,11 @@
         <TextView
             android:layout_width="260dp"
             android:layout_height="60dp"
-            android:text="전달받을 날짜를 선택해주세요"
+            android:text="일기를 입력해주세요"
             android:textStyle="bold"
             android:layout_gravity="center_horizontal"
             android:textSize="13dp"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="150dp"
             android:textColor="#4B4C4C"
             android:layout_marginLeft="3dp"
             >
@@ -106,39 +103,33 @@
         </TextView>
 
         <EditText
-            android:id="@+id/timer"
+            android:id="@+id/memory"
             android:layout_width="260dp"
-            android:layout_height="60dp"
+            android:layout_height="110dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="230dp"
+            android:layout_marginTop="180dp"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbarFadeDuration="0"
+            android:scrollbarSize="1dp"
+            android:scrollbarThumbVertical="@color/colorAccent"
+            android:scrollbarTrackVertical="@color/colorAccent"
             android:textColor="#6f6f6f"
-            android:hint="언제 나쁜 기억 알림을 받을까요?"
-            android:backgroundTint="#A5A5A5"
-            android:textSize="12dp"
             android:textColorHint="#A5A5A5"
-            />
+            android:textSize="12dp" />
 
-        <ImageView
-            android:id="@+id/send"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSave"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/send"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="350dp"
-            >
+            android:background="#17215d"
+            android:backgroundTint="#17215E"
+            android:text="저장하기"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
 
-        </ImageView>
 
-        <ImageView
-            android:layout_width="280dp"
-            android:layout_height="90dp"
-            android:scaleType="fitXY"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="53dp"
-            >
-
-        </ImageView>
         <TextView
             android:id="@+id/textviewDelete"
             android:layout_width="300dp"
