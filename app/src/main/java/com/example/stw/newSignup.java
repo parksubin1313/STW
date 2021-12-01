@@ -13,8 +13,9 @@ import android.widget.ImageView;
 
 public class newSignup extends AppCompatActivity {
 
-    String ID, password, email, name;
+    public static String signupID, signupPW, signupMail, signupName;
     ImageView signup;
+    EditText textID, textPW, textEmail, textName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,28 +26,36 @@ public class newSignup extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-        EditText textID = findViewById(R.id.editTextID);
-        EditText textPW = findViewById(R.id.editTextPassword);
-        EditText textEmail = findViewById(R.id.editTextEmail);
-        EditText textName = findViewById(R.id.editTextNickname);
+        textID = findViewById(R.id.editTextID);
+        textPW = findViewById(R.id.editTextPassword);
+        textEmail = findViewById(R.id.editTextEmail);
+        textName = findViewById(R.id.editTextNickname);
 
+        /*
         ID = String.valueOf(textID.getText());
         password = String.valueOf(textPW.getText());
         email = String.valueOf(textEmail.getText());
         name = String.valueOf(textName.getText());
+
+         */
 
         signup = findViewById(R.id.signup);
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                new userinfo().execute();
+                signupID=textID.getText().toString();
+                signupPW=textPW.getText().toString();
+                signupMail=textEmail.getText().toString();
+                signupName=textName.getText().toString();
+
+                userinfo info = new userinfo();
+                info.execute();
             }
         });
 
-
-
     }
+
 
     public class userinfo extends AsyncTask<Void, Integer, Void>
     {
@@ -57,7 +66,7 @@ public class newSignup extends AppCompatActivity {
 
                 //user dao를 통해 로그인과 회원가입 가능
                 UserDao dao = new UserDao();
-                UserDTO dto = new UserDTO(ID, password, email, name);
+                UserDTO dto = new UserDTO(signupID, signupPW, signupMail, signupName);
                 boolean test = dao.createUser(dto); // 회원가입 , true 또는 false를 return함
 
                 if(test)

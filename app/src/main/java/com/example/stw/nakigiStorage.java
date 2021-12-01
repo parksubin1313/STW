@@ -26,6 +26,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import static com.example.stw.newLogin.access;
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -48,9 +49,7 @@ public class nakigiStorage extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-        // Get the ID of the currently connected user
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser(); // Get information of logged in user
-        uid = user != null ? user.getUid() : null; // Get the unique uid of the logged-in user
+        uid = access;
 
         calendarView = findViewById(R.id.calendarView);
         textDate = findViewById(R.id.date);

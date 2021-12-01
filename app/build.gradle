@@ -31,10 +31,17 @@ android {
     buildFeatures {
         viewBinding true
     }
+    sourceSets {
+        main {
+            assets {
+                srcDirs 'src\\main\\assets'
+            }
+        }
+    }
 }
 
 dependencies {
-
+    implementation 'org.apache.poi:poi:3.9'
     implementation 'net.sourceforge.jexcelapi:jxl:2.6.12'
     implementation platform('com.google.firebase:firebase-bom:29.0.0')
     implementation 'com.google.firebase:firebase-analytics'

@@ -27,8 +27,11 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.example.stw.newLogin.access;
+
 public class nakigi extends AppCompatActivity {
 
+    //public static String userid;
     EditText text, timer;
     String memory, date, uid, curDate;
     DatabaseReference reference;
@@ -44,8 +47,10 @@ public class nakigi extends AppCompatActivity {
         actionBar.hide();
 
         // Get the ID of the currently connected user
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser(); // Get information of logged in user
-        uid = user != null ? user.getUid() : null; // Get the unique uid of the logged-in user
+        //FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser(); // Get information of logged in user
+        //uid = user != null ? user.getUid() : null; // Get the unique uid of the logged-in user
+
+        uid = access;
 
         text = findViewById(R.id.memory);
         timer = findViewById(R.id.timer);

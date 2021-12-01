@@ -28,6 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
+import static com.example.stw.newLogin.access;
 
 public class nakigiPopup extends Activity {
 
@@ -48,9 +49,7 @@ public class nakigiPopup extends Activity {
 
         setContentView(R.layout.activity_nakigi_popup);
 
-        // Get the ID of the currently connected user
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser(); // Get information of logged in user
-        uid = user != null ? user.getUid() : null; // Get the unique uid of the logged-in user
+        uid = access;
 
         Calendar cal = Calendar.getInstance();
 

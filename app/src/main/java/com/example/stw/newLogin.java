@@ -13,8 +13,8 @@ import android.widget.Toast;
 
 public class newLogin extends AppCompatActivity {
 
-    String ID, password;
-    String access;
+    public static String loginID, loginPW;
+    public static String access;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,16 +36,17 @@ public class newLogin extends AppCompatActivity {
         EditText textID = findViewById(R.id.editID);
         EditText textPW = findViewById(R.id.editPassword);
 
-        ID = String.valueOf(textID.getText());
-        password = String.valueOf(textPW.getText());
-
         ImageView buttonLogin = (ImageView) findViewById(R.id.buttonLogin);
         buttonLogin.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
-                new userinfo().execute();
+                loginID=textID.getText().toString();
+                loginPW=textPW.getText().toString();
+
+                userinfo info = new userinfo();
+                info.execute();
 
             }
         });
@@ -62,11 +63,11 @@ public class newLogin extends AppCompatActivity {
 
                 //user dao를 통해 로그인과 회원가입 가능
                 UserDao dao = new UserDao();
-                access=dao.login(ID,password); //로그인 access에 userid가 담김
+                access=dao.login(loginID,loginPW); //로그인 access에 userid가 담김
 
                 Log.e("login",access);
 
-                if(access == ID)
+                if(access.equals(loginID))
                 {
                     Intent intent = new Intent(newLogin.this, nakigi.class);
                     startActivity(intent);
