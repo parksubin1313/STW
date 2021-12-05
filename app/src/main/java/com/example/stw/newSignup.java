@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class newSignup extends AppCompatActivity {
 
@@ -71,6 +72,7 @@ public class newSignup extends AppCompatActivity {
 
                 if(test)
                 {
+                    //Toast.makeText(newSignup.this, "회원가입 성공", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(newSignup.this, newLogin.class);
                     startActivity(intent);
                     finish();

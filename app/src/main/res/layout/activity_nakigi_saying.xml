@@ -32,7 +32,7 @@
             android:fontFamily="@font/applesdgothicneol"
             android:gravity="center"
             android:textColor="#fff"
-            android:textSize="15sp" />
+            android:textSize="20dp" />
     </LinearLayout>
 
 

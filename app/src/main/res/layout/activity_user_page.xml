@@ -1,20 +1,223 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ffe6b3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
-    tools:context=".userPage">
+    android:orientation="vertical"
+    android:backgroundTint="@color/white"
+    >
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#172F57"
+        >
 
-    <Button
-        android:id="@+id/start"
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/logo"
+            android:textColor="@color/colorAccent">
+
+        </ImageView>
+    </FrameLayout>
+
+    <FrameLayout
         android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="나기지 보관함"
-        />
+        android:layout_marginTop="125dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/mypagement"
+
+            ></ImageView>
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/enterplace"
+
+            ></ImageView>
+
+        <TextView
+            android:layout_width="280dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp"
+            android:background="@null"
+            android:backgroundTint="#A5A5A5"
+            android:fontFamily="@font/applesdgothicneol"
+            android:text="닉네임"
+            android:textColor="#172F57"
+            android:textColorHint="#5A5A5A"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="200dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="40dp"
+            android:background="@null"
+            android:backgroundTint="#A5A5A5"
+            android:fontFamily="@font/applesdgothicneol"
+            android:text=""
+            android:textColor="#172F57"
+            android:textColorHint="#5A5A5A"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="150dp"
+            android:src="@drawable/enterplace"
+
+            ></ImageView>
+
+        <TextView
+            android:layout_width="280dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="170dp"
+            android:background="@null"
+            android:backgroundTint="#A5A5A5"
+            android:fontFamily="@font/applesdgothicneol"
+            android:text="E-mail"
+            android:textColor="#172F57"
+            android:textColorHint="#5A5A5A"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/usermail"
+            android:layout_width="200dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="170dp"
+            android:layout_marginLeft="40dp"
+            android:background="@null"
+            android:backgroundTint="#A5A5A5"
+            android:fontFamily="@font/applesdgothicneol"
+            android:text=""
+            android:textColor="#172F57"
+            android:textColorHint="#5A5A5A"
+            android:textSize="15dp"
+            android:textStyle="bold" />
 
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="230dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp">
+
+            <ImageView
+                android:id="@+id/nakigistorage"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:src="@drawable/btnnakigi"></ImageView>
+
+            <ImageView
+                android:id="@+id/diarystorage"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/btndiary"></ImageView>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btnunsign"
+            android:layout_width="280dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="300dp"
+            android:src="@drawable/unsign"></ImageView>
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="#ffffff"
+        >
+
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:id="@+id/chatbot"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/chatbot"></ImageView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            >
+            <ImageView
+                android:id="@+id/nakigi"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/nakigi"
+                >
+            </ImageView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            >
+            <ImageView
+                android:id="@+id/diary"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/diary"
+                >
+            </ImageView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:background="#172F57"
+            >
+
+            <ImageView
+                android:id="@+id/mypage"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/mypage_click"></ImageView>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

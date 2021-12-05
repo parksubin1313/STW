@@ -3,9 +3,12 @@ package com.example.stw;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.FileInputStream;
@@ -34,10 +37,30 @@ public class nakigiSaying extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
+        ImageView start = findViewById(R.id.start);
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(nakigiSaying.this, nakigi.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         text = findViewById(R.id.saying);
         //String[] saying_array = new String[61];
         readExcel();
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(nakigiSaying.this, nakigi.class); //지금 액티비티에서 다른 액티비티로 이동하는 인텐트 설정
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);    //인텐트 플래그 설정
+        startActivity(intent);  //인텐트 이동
+        finish();   //현재 액티비티 종료
     }
 
     public void readExcel() {
@@ -54,7 +77,8 @@ public class nakigiSaying extends AppCompatActivity {
             InputStream fis = getBaseContext().getResources().getAssets().open("nakigi.xls");
             workbook = Workbook.getWorkbook(fis);
 
-            int random = (int)Math.random()*58;
+            double randomValue = Math.random();
+            int random = (int)(randomValue*56);
 
             //엑셀파일이 있다면
             if (workbook != null) {
@@ -76,7 +100,7 @@ public class nakigiSaying extends AppCompatActivity {
                         {
                             String contents = sheet.getCell(col, row).getContents();
                             saying_array[row-1]=contents;
-                            Log.e("Main", row + "번째: " + contents);
+                            //Log.e("Main", row + "번째: " + contents);
                         }
 
                     }

@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -29,10 +30,13 @@ import java.util.Map;
 
 import static com.example.stw.newLogin.access;
 
+import org.w3c.dom.Text;
+
 public class nakigi extends AppCompatActivity {
 
     //public static String userid;
-    EditText text, timer;
+    TextView timer;
+    EditText text;
     String memory, date, uid, curDate;
     DatabaseReference reference;
     private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
@@ -46,14 +50,11 @@ public class nakigi extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-        // Get the ID of the currently connected user
-        //FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser(); // Get information of logged in user
-        //uid = user != null ? user.getUid() : null; // Get the unique uid of the logged-in user
-
         uid = access;
 
         text = findViewById(R.id.memory);
         timer = findViewById(R.id.timer);
+
 
         Calendar cal = Calendar.getInstance();
         int mYear = cal.get(Calendar.YEAR);
@@ -79,10 +80,6 @@ public class nakigi extends AppCompatActivity {
                     //startActivity(intent);
                     //finish();
                 }
-                /*
-                memoryList group = snapshot.getValue(memoryList.class);
-                memory = group.getMemory();
-*/
             }
 
             @Override
@@ -99,6 +96,8 @@ public class nakigi extends AppCompatActivity {
                 timer.setText(year +"-"+ (month+1) +"-"+ dayOfMonth);
             }
         }, mYear, mMonth, mDay);
+
+
 
 
         timer.setOnClickListener(new View.OnClickListener() {
@@ -137,7 +136,7 @@ public class nakigi extends AppCompatActivity {
         bottomDiary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(nakigi.this, diary.class);
+                Intent intent = new Intent(nakigi.this, personalDiary.class);
                 startActivity(intent);
                 finish();
             }

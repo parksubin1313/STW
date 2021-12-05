@@ -30,14 +30,14 @@
     <style name="MySpinnerDatePickerStyle" parent="Theme.AppCompat.Light.Dialog">
         <item name="android:datePickerMode">spinner</item>
         <!-- 상단 색 변경 -->
-        <item name="colorAccent">@color/purple_700</item>
+        <item name="colorAccent">@color/colorAccent</item>
         <!-- dialog의 배경 변경 -->
-        <item name="background">@color/purple_700</item>
+        <item name="background">@color/colorAccent</item>
         <!-- 선택한 날짜를 표시할 색상 -->
-        <item name="colorControlActivated">@color/purple_700</item>
-        <item name="colorControlHighlight">@color/purple_700</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
         <!-- 취소/확인버튼 색상 -->
-        <item name="android:textColor">@color/purple_700</item>
+        <item name="android:textColor">@color/colorAccent</item>
     </style>
 
     <style name="Theme.STW.NoActionBar">
@@ -48,4 +48,12 @@
     <style name="Theme.STW.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.STW.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="CalendarViewTheme" parent="Theme.STW">
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:focusedMonthDateColor">@color/white</item>
+        <item name="android:weekNumberColor">@color/white</item>
+    </style>
+
+
 </resources>

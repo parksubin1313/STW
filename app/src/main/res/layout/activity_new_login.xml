@@ -6,112 +6,92 @@
     android:layout_height="match_parent"
     android:background="#ffffff"
     android:orientation="vertical"
-    tools:context=".newLogin">
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#17215d"
-        >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="0dp"
-            android:src="@drawable/logo"
-            android:textColor="@color/colorAccent">
-
-        </ImageView>
-    </FrameLayout>
+    tools:context=".newLogin"
+    android:layout_gravity="center">
 
 
     <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="60dp"
-        >
+        android:layout_marginTop="175dp"
+        android:gravity="center_horizontal">
 
         <ImageView
-            android:layout_width="230dp"
+            android:layout_width="300dp"
             android:layout_height="60dp"
-            android:src="@drawable/loginment"
             android:layout_gravity="center_horizontal"
+            android:src="@drawable/loginment"
 
             ></ImageView>
 
-        <TextView
-            android:layout_width="260dp"
+        <ImageView
+            android:layout_width="300dp"
             android:layout_height="60dp"
-            android:text="ID"
-            android:textStyle="bold"
             android:layout_gravity="center_horizontal"
-            android:textSize="13dp"
-            android:layout_marginTop="89dp"
-            android:textColor="#4B4C4C"
-            android:layout_marginLeft="3dp"
-            >
+            android:layout_marginTop="80dp"
+            android:src="@drawable/enterplace"
 
-        </TextView>
+            ></ImageView>
+
         <EditText
             android:id="@+id/editID"
-            android:layout_width="260dp"
+            android:layout_width="280dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="90dp"
-            android:textColor="#6f6f6f"
-            android:hint="ID"
+            android:layout_marginTop="80dp"
+            android:background="@null"
             android:backgroundTint="#A5A5A5"
-            android:textSize="12dp"
-            android:textColorHint="#A5A5A5"
-            />
-        <TextView
-            android:layout_width="260dp"
-            android:layout_height="60dp"
-            android:text="Password"
-            android:textStyle="bold"
-            android:layout_gravity="center_horizontal"
-            android:textSize="13dp"
-            android:layout_marginTop="169dp"
-            android:textColor="#4B4C4C"
-            android:layout_marginLeft="3dp"
-            >
+            android:fontFamily="@font/applesdgothicneol"
+            android:hint="아이디"
+            android:textColor="#172F57"
+            android:textColorHint="#172F57"
+            android:textSize="15dp"
+            android:textStyle="bold" />
 
-        </TextView>
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="150dp"
+            android:src="@drawable/enterplace"
+
+            ></ImageView>
+
+
         <EditText
             android:id="@+id/editPassword"
-            android:layout_width="260dp"
+            android:layout_width="280dp"
             android:layout_height="60dp"
-            android:layout_marginTop="170dp"
-            android:inputType="textPassword"
             android:layout_gravity="center_horizontal"
-            android:textColor="#6f6f6f"
-            android:hint="••••••••"
-            android:textSize="12dp"
-            android:textColorHint="#A5A5A5"
+            android:layout_marginTop="150dp"
+            android:background="@null"
             android:backgroundTint="#A5A5A5"
-            />
+            android:fontFamily="@font/applesdgothicneol"
+            android:hint="비밀번호"
+            android:textColor="#172F57"
+            android:textColorHint="#172F57"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:inputType="textPassword"/>
 
 
         <ImageView
             android:id="@+id/buttonLogin"
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:src="@drawable/btnsignin"
-            android:layout_marginTop="250dp"
+            android:layout_width="280dp"
+            android:layout_height="85dp"
             android:layout_gravity="center_horizontal"
-            ></ImageView>
+            android:layout_marginTop="230dp"
+            android:src="@drawable/btnsignin"></ImageView>
 
 
         <ImageView
             android:id="@+id/btnSignup"
-            android:layout_width="200dp"
-            android:layout_height="100dp"
-            android:src="@drawable/gosignup"
-            android:layout_marginTop="350dp"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
-            ></ImageView>
+            android:layout_marginTop="300dp"
+            android:src="@drawable/gosignup"></ImageView>
 
 
     </FrameLayout>

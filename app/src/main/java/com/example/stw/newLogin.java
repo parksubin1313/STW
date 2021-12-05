@@ -1,5 +1,6 @@
 package com.example.stw;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,12 +15,15 @@ import android.widget.Toast;
 public class newLogin extends AppCompatActivity {
 
     public static String loginID, loginPW;
-    public static String access;
+    public static String access, result, nickname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_login);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         ImageView signup = findViewById(R.id.btnSignup);
         signup.setOnClickListener(new View.OnClickListener() {
@@ -50,8 +54,6 @@ public class newLogin extends AppCompatActivity {
 
             }
         });
-
-
     }
 
     public class userinfo extends AsyncTask<Void, Integer, Void>
@@ -63,12 +65,12 @@ public class newLogin extends AppCompatActivity {
 
                 //user dao를 통해 로그인과 회원가입 가능
                 UserDao dao = new UserDao();
-                access=dao.login(loginID,loginPW); //로그인 access에 userid가 담김
-
+                access=dao.login(loginID,loginPW);
                 Log.e("login",access);
 
                 if(access.equals(loginID))
                 {
+                    //Toast.makeText(newLogin.this, "로그인 성공", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(newLogin.this, nakigi.class);
                     startActivity(intent);
                     finish();
@@ -82,4 +84,5 @@ public class newLogin extends AppCompatActivity {
             return null;
         }
     }
+
 }

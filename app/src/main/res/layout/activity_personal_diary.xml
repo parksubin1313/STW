@@ -10,9 +10,8 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#17215d"
+        android:background="@color/colorAccent"
         >
-
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="60dp"
@@ -28,115 +27,120 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/userId"
-            android:layout_width="200dp"
+        <ImageView
+            android:layout_width="60dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="135dp"
-            android:layout_marginTop="33dp"
-
-            android:textColor="@color/black"
-            android:textSize="10dp" />
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/common"
+            />
 
         <ImageView
-            android:layout_width="290dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center_horizontal"
-            android:text="이메일"
-            android:textColor="@color/black"
-            android:textSize="20dp" />
-
-        //사용자의 이메일을 적기 위한 textview
-
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="80dp"
+            android:src="@drawable/personal_click"
+            />
 
     </FrameLayout>
 
     <FrameLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="512dp"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="260dp"
-            android:layout_height="60dp"
-            android:text="날짜를 선택해주세요"
-            android:textStyle="bold"
-            android:layout_gravity="center_horizontal"
-            android:textSize="13dp"
-            android:layout_marginTop="50dp"
-            android:textColor="#4B4C4C"
-            android:layout_marginLeft="3dp"
-            >
-
-        </TextView>
-
-        <EditText
             android:id="@+id/timer"
-            android:layout_width="260dp"
-            android:layout_height="60dp"
+            android:layout_width="280dp"
+            android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="80dp"
-            android:textColor="#6f6f6f"
+            android:layout_marginTop="30dp"
+            android:textColor="#172F57"
+            android:fontFamily="@font/cartoon"
             android:backgroundTint="#A5A5A5"
-            android:textSize="12dp"
-            android:textColorHint="#A5A5A5"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            android:textColorHint="#172F57"
+            android:background="@null"
+            android:textStyle="bold"
             />
 
-
         <TextView
-            android:layout_width="260dp"
-            android:layout_height="60dp"
-            android:text="일기를 입력해주세요"
-            android:textStyle="bold"
+            android:layout_width="320dp"
+            android:layout_height="230dp"
             android:layout_gravity="center_horizontal"
-            android:textSize="13dp"
-            android:layout_marginTop="150dp"
-            android:textColor="#4B4C4C"
-            android:layout_marginLeft="3dp"
-            >
-
-        </TextView>
+            android:layout_marginTop="80dp"
+            android:background="@drawable/border"
+            />
 
         <EditText
             android:id="@+id/memory"
-            android:layout_width="260dp"
-            android:layout_height="110dp"
+            android:layout_width="300dp"
+            android:layout_height="210dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="180dp"
-            android:scrollbarAlwaysDrawVerticalTrack="true"
-            android:scrollbarFadeDuration="0"
-            android:scrollbarSize="1dp"
-            android:scrollbarThumbVertical="@color/colorAccent"
-            android:scrollbarTrackVertical="@color/colorAccent"
-            android:textColor="#6f6f6f"
-            android:textColorHint="#A5A5A5"
-            android:textSize="12dp" />
+            android:layout_marginTop="90dp"
+            android:fontFamily="@font/cartoon"
+            android:gravity="top"
+            android:hint="당신의 하루가 궁금해요!"
+            android:background="@null"
+            android:textColor="#000000"
+            android:textColorHint="#5A5A5A"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:scrollbars = "vertical"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnSave"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
+
+        <FrameLayout
+            android:layout_width="320dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="310dp"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/save"
+                android:layout_width="70dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="250dp"
+                android:text="저장하기"
+                android:textSize="20dp"
+                android:fontFamily="@font/cartoon"
+                />
+
+        </FrameLayout>
+
+
+
+
+        <ImageView
+            android:id="@+id/btnTopic"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:src="@drawable/callai"
+            android:layout_marginTop="360dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="350dp"
-            android:background="#17215d"
-            android:backgroundTint="#17215E"
-            android:text="저장하기"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold" />
-
+            ></ImageView>
 
         <TextView
-            android:id="@+id/textviewDelete"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
+            android:id="@+id/topic"
+            android:layout_width="280dp"
+            android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="75dp"
-            android:textColor="@color/colorAccent" />
+            android:layout_marginTop="420dp"
+            android:textColor="#6f6f6f"
+            android:hint="추천된 주제 나오는 칸"
+            android:fontFamily="@font/cartoon"
+            android:backgroundTint="#A5A5A5"
+            android:textAlignment="center"
+            android:textSize="15dp"
+            android:textColorHint="#172F57"
+            android:background="@null"
+            android:textStyle="bold"
+            />
+
     </FrameLayout>
 
     <LinearLayout
@@ -177,6 +181,7 @@
             android:layout_width="100dp"
             android:layout_height="60dp"
             android:layout_weight="1"
+            android:background="@color/colorAccent"
             >
             <ImageView
                 android:id="@+id/diary"
@@ -184,7 +189,7 @@
                 android:layout_height="50dp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/diary"
+                android:src="@drawable/diary_click"
                 >
             </ImageView>
         </RelativeLayout>
