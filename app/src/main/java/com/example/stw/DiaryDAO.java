@@ -1,6 +1,7 @@
 package com.example.stw;
 
 import android.util.Log;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -101,7 +102,7 @@ public class DiaryDAO {
 
             result = builder.toString();
             in.close();
-            Log.i("APIManager", result);
+            Log.i("APIManager", "update "+result);
 
         } catch (ProtocolException protocolException) {
             protocolException.printStackTrace();
@@ -146,7 +147,7 @@ public class DiaryDAO {
             result = builder.toString();
 
             in.close();
-            Log.i("APIManager", result);
+            Log.i("APIManager", "delete "+result);
 
 
         } catch (ProtocolException e) {

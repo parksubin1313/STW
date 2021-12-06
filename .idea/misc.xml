@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/bsi19/AndroidStudioProjects/STW2/app/src/main/res/font/font.xml" value="0.2838541666666667" />
+        <entry key="..\:/Users/bsi19/AndroidStudioProjects/STW2/app/src/main/res/layout/activity_login.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/bsi19/AndroidStudioProjects/STW2/app/src/main/res/layout/activity_nakigi.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/bsi19/AndroidStudioProjects/STW2/app/src/main/res/layout/activity_personal_diary.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/bsi19/AndroidStudioProjects/STW2/app/src/main/res/layout/activity_personal_storage.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/drawable/border.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/font/custom_font_family.xml" value="0.24270833333333333" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/font/font.xml" value="0.1" />
