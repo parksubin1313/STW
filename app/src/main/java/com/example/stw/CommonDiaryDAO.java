@@ -115,6 +115,7 @@ public class CommonDiaryDAO {
             return false;
         }
     }
+
     public ArrayList<CommonDiaryDTO> read(String userid)
     {
         ArrayList<CommonDiaryDTO> comm = new ArrayList<CommonDiaryDTO>();
