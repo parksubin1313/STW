@@ -20,6 +20,10 @@ public class commonTitleList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_common_title_list);
 
+        setitle title = new setitle();
+        title.execute();
+
+        /*
         ListView listView = findViewById(R.id.listView);
 
         titleAdapter adapter = new titleAdapter();
@@ -27,9 +31,46 @@ public class commonTitleList extends AppCompatActivity {
         adapter.addItem(new commonItem("two"));
 
         listView.setAdapter(adapter);
+
+         */
     }
 
+    public class setitle extends AsyncTask<Void, Integer, Void>
+    {
+        @Override
+        protected Void doInBackground(Void...params) // 세부동작
+        {
+            try {
+                ArrayList<CommonDiaryDTO> comm = new ArrayList<CommonDiaryDTO>();
+                CommonDiaryDAO dao = new CommonDiaryDAO();
+                comm = dao.readList();
+                int s = comm.size();
+                String[] title = new String[s];
 
+                for(int i=0; i<comm.size(); i++)
+                {
+                    Log.e("/",comm.get(i).getTitle());
+                    title[i] = comm.get(i).getTitle();
+                }
+
+                ListView listView = findViewById(R.id.listView);
+
+                titleAdapter adapter = new titleAdapter();
+
+                for(int i=0; i<title.length; i++)
+                {
+                    adapter.addItem(new commonItem(title[i]));
+                }
+
+                listView.setAdapter(adapter);
+            }
+            catch(Exception e)
+            {
+
+            }
+            return null;
+        }
+    }
 
     class titleAdapter extends BaseAdapter {
 
