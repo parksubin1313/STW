@@ -16,7 +16,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.STW">
-
+        <activity
+            android:name=".commonList"
+            android:exported="true" />
+        <activity
+            android:name=".commonWrite"
+            android:exported="true" />
+        <activity
+            android:name=".commonSearch"
+            android:exported="true" />
+        <activity
+            android:name=".commonCreate"
+            android:exported="true" />
         <activity
             android:name=".personalStorage"
             android:exported="true" />
@@ -25,9 +36,6 @@
             android:exported="true" />
         <activity
             android:name=".commonDiary"
-            android:exported="true" />
-        <activity
-            android:name=".diary"
             android:exported="true" />
         <activity
             android:name=".newSignup"

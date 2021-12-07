@@ -1,15 +1,23 @@
 package com.example.stw;
 
+import static com.example.stw.newLogin.access;
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class userPage extends AppCompatActivity {
+
+    public static String id;
+    TextView username,usermail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +26,15 @@ public class userPage extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
+
+        username = findViewById(R.id.username);
+        usermail = findViewById(R.id.usermail);
+
+        id = access;
+        Log.e("id",id);
+
+        userinfo info = new userinfo();
+        info.execute();
 
         ImageView nakigistorage = findViewById(R.id.nakigistorage);
         nakigistorage.setOnClickListener(new View.OnClickListener() {
@@ -44,7 +61,7 @@ public class userPage extends AppCompatActivity {
         bottomNakigi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(userPage.this, userPage.class);
+                Intent intent = new Intent(userPage.this, nakigi.class);
                 startActivity(intent);
                 finish();
             }
@@ -60,6 +77,29 @@ public class userPage extends AppCompatActivity {
             }
         });
 
+    }
+
+    public class userinfo extends AsyncTask<Void, Integer, Void>
+    {
+        @Override
+        protected Void doInBackground(Void...params) // 세부동작
+        {
+            try {
+
+                UserDao dao = new UserDao();
+                UserDTO dto = new UserDTO();
+                dto = dao.myPage(id);
+                String name = dto.getName();
+                String mail = dto.getEmail();
+                username.setText(name);
+                usermail.setText(mail);
+            }
+            catch(Exception e)
+            {
+
+            }
+            return null;
+        }
     }
 
     @Override

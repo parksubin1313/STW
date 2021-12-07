@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ffe6b3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="#ffe6b3"
     android:backgroundTint="@color/white"
-    tools:context=".personalStorage">
+    >
+
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#17215d"
+        android:background="#172F57"
         >
 
         <ImageView
@@ -21,55 +20,69 @@
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="0dp"
-            android:src="@drawable/logo" >
+            android:src="@drawable/logo"
+            android:textColor="@color/colorAccent">
 
         </ImageView>
     </FrameLayout>
 
     <FrameLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:layout_centerInParent="true">
+        android:layout_marginTop="80dp"
+        android:orientation="horizontal">
 
-        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
-            android:id="@+id/calendarView"
-            app.mcv_showOtherDates="all"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            app:mcv_selectionColor="#E6E6E6">
-        </com.prolificinteractive.materialcalendarview.MaterialCalendarView>
+        <ImageView
+            android:layout_width="290dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/commonment" />
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="120dp"
+            android:src="@drawable/createment" />
+
+        <TextView
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="180dp"
+            android:textAlignment="center"
+            android:background="@drawable/border" />
 
         <EditText
-            android:id="@+id/content"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginTop="250dp"/>
+            android:id="@+id/title"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="180dp"
+            android:background="@null"
+            android:fontFamily="@font/applesdgothicneol"
+            android:hint="제목을 입력해주세요"
+            android:scrollbars="vertical"
+            android:textColor="#172F57"
+            android:textColorHint="#172F57"
+            android:textSize="15dp"
+            android:textStyle="bold" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="470dp"
-            android:orientation="horizontal"
-            android:gravity="center">
 
-            <Button
-                android:id="@+id/update"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="수정"/>
-            <Button
-                android:id="@+id/delete"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="삭제"/>
-        </LinearLayout>
+        <ImageView
+            android:id="@+id/create"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="300dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/create">
+
+        </ImageView>
 
     </FrameLayout>
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -77,7 +90,9 @@
         android:orientation="horizontal"
         android:background="#ffffff"
         android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom">
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        >
 
         <RelativeLayout
             android:layout_width="100dp"
@@ -96,6 +111,7 @@
             android:layout_width="100dp"
             android:layout_height="60dp"
             android:layout_weight="1"
+            android:background="#172F57"
             >
             <ImageView
                 android:id="@+id/nakigi"
@@ -103,7 +119,7 @@
                 android:layout_height="50dp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/nakigi"
+                android:src="@drawable/nakigi_click"
                 >
             </ImageView>
         </RelativeLayout>

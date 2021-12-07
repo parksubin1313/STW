@@ -27,6 +27,7 @@ public class personalDiary extends AppCompatActivity {
     EditText text;
     public static String content, curDate;
     String fileName = "diary.txt";
+    ImageView btnCommon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +65,17 @@ public class personalDiary extends AppCompatActivity {
                 }
             }
         });
+
+        btnCommon = findViewById(R.id.btnCommon);
+        btnCommon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(personalDiary.this, commonDiary.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
         //------하단바------
         ImageView bottomUserpage = (ImageView) findViewById(R.id.mypage);

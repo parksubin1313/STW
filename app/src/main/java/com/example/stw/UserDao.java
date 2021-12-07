@@ -91,5 +91,38 @@ public class UserDao {
         return access_token;
     }
 
+    public UserDTO myPage(String userid)
+    {
+        UserDTO myD=new UserDTO();
+
+        try {
+            URL url = new URL("http://3.35.47.128/mypage/" + userid);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            InputStream is = conn.getInputStream();
+            StringBuilder builder = new StringBuilder();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+            String line;
+            while ((line = reader.readLine()) != null)
+                builder.append(line);
+            String resultJson = "";
+            resultJson = builder.toString();
+            JSONObject json=new JSONObject(resultJson);
+            String uid = json.getString("userid");
+            String password = json.getString("password");
+            String nick = json.getString("name");
+            String email = json.getString("email");
+            myD.setName(nick);
+            myD.setEmail(email);
+            myD.setUserid(userid);
+            myD.setPassword(password);
+        }
+        catch (Exception e) {
+            Log.e("APIManager", "GET getUser method failed: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return myD;
+    }
+
 }
 

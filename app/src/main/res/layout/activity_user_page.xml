@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="#ffe6b3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -30,7 +30,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="125dp"
         android:layout_weight="1"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:layout_centerInParent="true">
 
         <ImageView
             android:layout_width="300dp"
@@ -158,6 +159,8 @@
         android:layout_height="60dp"
         android:orientation="horizontal"
         android:background="#ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
         >
 
         <RelativeLayout
@@ -220,4 +223,4 @@
     </LinearLayout>
 
 
-</LinearLayout>
+</RelativeLayout>

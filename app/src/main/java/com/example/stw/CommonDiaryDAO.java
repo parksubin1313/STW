@@ -146,6 +146,7 @@ public class CommonDiaryDAO {
         }
         return comm;
     }
+
     public boolean invite(int id, String invited)
     {
         String result = null;

@@ -5,7 +5,8 @@ public class CommonDiaryDTO {
     private String ccontents;
     private String host;
     private String create_at;
-    public CommonDiaryDTO(String content,String create, String h,  int diaryid)
+
+    public CommonDiaryDTO(String content,String create, String h, int diaryid)
     {
         ccontents=content;
         host=h;
@@ -13,8 +14,6 @@ public class CommonDiaryDTO {
         cid=diaryid;
 
     }
-
-
 
     public void setCcontents(String ccontents) {
         this.ccontents = ccontents;

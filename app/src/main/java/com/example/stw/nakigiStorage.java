@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -95,7 +96,7 @@ public class nakigiStorage extends AppCompatActivity {
             }
         });
 
-        Button delete = findViewById(R.id.delete);
+        ImageView delete = findViewById(R.id.delete);
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,5 +107,14 @@ public class nakigiStorage extends AppCompatActivity {
 
     private void deleteData(String date) {
         mReference.child("Nakigi List").child(uid).child(date).removeValue();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(nakigiStorage.this, userPage.class); //지금 액티비티에서 다른 액티비티로 이동하는 인텐트 설정
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);    //인텐트 플래그 설정
+        startActivity(intent);  //인텐트 이동
+        finish();   //현재 액티비티 종료
     }
 }

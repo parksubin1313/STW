@@ -1,7 +1,6 @@
 package com.example.stw;
 
 public class UserDTO {
-
     private String userid;
     private String password;
     private String name;
@@ -14,12 +13,10 @@ public class UserDTO {
         this.email=email;
         this.name=name;
     }
-
     public UserDTO()
     {
 
     }
-
     // getter
     public String getUserid()
     {
@@ -58,4 +55,3 @@ public class UserDTO {
         this.userid = userid;
     }
 }
-
