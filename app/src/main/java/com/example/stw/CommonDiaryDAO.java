@@ -138,9 +138,10 @@ public class CommonDiaryDAO {
                 String create_at = json.getJSONObject(i).getString("create_at");
                 String host = json.getJSONObject(i).getString("host");
                 int diary_id = json.getJSONObject(i).getInt("id");
-                String ctitle=json.getJSONObject(i).getString("title");
-                CommonDiaryDTO result = new CommonDiaryDTO(content, create_at, host, diary_id,ctitle);
+                String ctitle = json.getJSONObject(i).getString("title");
+                CommonDiaryDTO result = new CommonDiaryDTO(content, create_at, host, diary_id, ctitle);
                 comm.add(result);
+                Log.i("APIManager", ctitle);
             }
         }
         catch (Exception e) {
