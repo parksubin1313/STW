@@ -15,8 +15,12 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -28,6 +32,7 @@ public class personalDiary extends AppCompatActivity {
     public static String content, curDate;
     String fileName = "diary.txt";
     ImageView btnCommon;
+    String tDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +52,13 @@ public class personalDiary extends AppCompatActivity {
 
         timer.setText(cal.get(Calendar.YEAR) + "년" + (cal.get(Calendar.MONTH) + 1) + "월" + cal.get(Calendar.DATE) + "일");
 
+        String d = Integer.toString(cal.get(Calendar.DATE));
+        if(cal.get(Calendar.DATE)<10){
+            d = "0" + cal.get(Calendar.DATE);
+        }
+
+        tDate = cal.get(Calendar.YEAR) + "/" + (cal.get(Calendar.MONTH)+1) + "/" + d;
+        Log.i("diary", tDate);
 
         DatePickerDialog datePickerDialog = new DatePickerDialog(this, R.style.MySpinnerDatePickerStyle, new DatePickerDialog.OnDateSetListener() {
 
@@ -119,17 +131,30 @@ public class personalDiary extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... params) {
 
+            boolean isExist = false;
             try{
-                DiaryDAO dao = new DiaryDAO();
-                boolean result = dao.create(content, "flysamsung");
-                Log.e("APIManager", "create");
+                FileInputStream fis = openFileInput(fileName);
+                BufferedReader buffer = new BufferedReader(new InputStreamReader(fis));
+                String str = buffer.readLine();
 
-                if(result)
-                {
-                    Intent intent = new Intent(personalDiary.this, personalStorage.class);
-                    startActivity(intent);
-                    finish();
+                while(str != null) {
+                    if(str.equals(tDate)){
+                        isExist = true;
+                    }
+                    str = buffer.readLine();
                 }
+
+                if(!isExist){
+                    DiaryDAO dao = new DiaryDAO();
+                    boolean result = dao.create(content, "flysamsung");
+                    Log.e("APIManager", "create");
+                }
+                if(isExist){
+                    Toast.makeText(getApplicationContext(), "이미 일기를 작성했어요", Toast.LENGTH_SHORT).show();
+                }
+
+                buffer.close();
+                fis.close();
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -210,6 +235,10 @@ public class personalDiary extends AppCompatActivity {
                 }
 
                 out.close();
+
+                Intent intent = new Intent(personalDiary.this, personalStorage.class);
+                startActivity(intent);
+                finish();
 
             } catch (Exception e) {
                 e.printStackTrace();

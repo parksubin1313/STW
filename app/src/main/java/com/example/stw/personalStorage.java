@@ -387,7 +387,7 @@ public class personalStorage extends AppCompatActivity implements OnDateSelected
             }
             else{
                 ctt.setText("");
-                Toast.makeText(getApplicationContext(), "아직 일기를 작성하지 않았어요!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "아직 일기를 작성하지 않았어요!", Toast.LENGTH_SHORT).show();
             }
         }
     }

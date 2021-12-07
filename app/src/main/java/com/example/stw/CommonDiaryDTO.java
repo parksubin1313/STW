@@ -5,14 +5,24 @@ public class CommonDiaryDTO {
     private String ccontents;
     private String host;
     private String create_at;
+    private String title;
 
-    public CommonDiaryDTO(String content,String create, String h, int diaryid)
+    public CommonDiaryDTO(String content,String create, String h, int diaryid, String ctitle)
     {
         ccontents=content;
         host=h;
         create_at=create;
         cid=diaryid;
+        title=ctitle;
 
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public void setCcontents(String ccontents) {
