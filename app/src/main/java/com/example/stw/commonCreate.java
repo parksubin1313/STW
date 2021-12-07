@@ -49,8 +49,8 @@ public class commonCreate extends AppCompatActivity {
         protected Void doInBackground(Void... params) {
 
             try{
-                DiaryDAO dao = new DiaryDAO();
-                boolean result = dao.create(title, ID);
+                CommonDiaryDAO dao = new CommonDiaryDAO();
+                boolean result = dao.create("", ID, title);
                 Log.e("APIManager", title + "/ create");
 
                 if(result)

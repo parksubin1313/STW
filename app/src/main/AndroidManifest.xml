@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.STW">
         <activity
-            android:name=".commonList"
+            android:name=".commonTitleList"
             android:exported="true" />
         <activity
             android:name=".commonWrite"

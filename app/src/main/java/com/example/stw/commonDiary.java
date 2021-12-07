@@ -33,7 +33,7 @@ public class commonDiary extends AppCompatActivity {
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(commonDiary.this, commonSearch.class);
+                Intent intent = new Intent(commonDiary.this, commonTitleList.class);
                 startActivity(intent);
                 finish();
             }
