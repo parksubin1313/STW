@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
 public class commonWriteTo extends AppCompatActivity {
@@ -20,6 +21,7 @@ public class commonWriteTo extends AppCompatActivity {
     int cdid;
     String contentAll;
     TextView textView;
+    HashMap<String, String> userContent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,24 @@ public class commonWriteTo extends AppCompatActivity {
         try {
             contentAll = all.execute().get();
             Log.i("common", "contentAll: "+contentAll);
+
+            String[] cttSplit = contentAll.split(" : ");
+            userContent = new HashMap<String, String>();
+
+            if(cttSplit[0].equals("")){
+                for(int j=0; j<cttSplit.length-2; j+=2) {
+                    userContent.put(cttSplit[j+1], cttSplit[j+2]);
+                    Log.i("common", "user: "+cttSplit[j+1]);
+                    Log.i("common", "content: "+cttSplit[j+2]);
+                }
+            }
+            else{
+                for(int j=0; j<cttSplit.length-1; j+=2) {
+                    userContent.put(cttSplit[j], cttSplit[j+1]);
+                    Log.i("common", "content"+cttSplit[j]);
+                }
+            }
+
         } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
@@ -96,6 +116,7 @@ public class commonWriteTo extends AppCompatActivity {
                 CommonDiaryDAO dao = new CommonDiaryDAO();
                 dao.update(contentUpdate, cdid);
                 Log.i("common", contentUpdate);
+                userContent.put(uid, addContents);
 
                 textView.setText(contentUpdate);
 

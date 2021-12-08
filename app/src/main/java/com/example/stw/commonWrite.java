@@ -137,7 +137,7 @@ public class commonWrite extends AppCompatActivity {
 
                 for(int i=0; i<comm.size(); i++)
                 {
-                    Log.i("common", "did: " + comm.get(i).getTitle()+"  title: "+comm.get(i).getCid());
+                    Log.i("common", "did: " + comm.get(i).getCid()+"  title: "+comm.get(i).getTitle());
                     title.put(comm.get(i).getCid(), comm.get(i).getTitle());
                 }
 
