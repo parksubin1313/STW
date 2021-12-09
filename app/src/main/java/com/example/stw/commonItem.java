@@ -2,7 +2,7 @@ package com.example.stw;
 
 public class commonItem {
 
-    String title;
+    String title ,ID, memory;
 
     public commonItem(String title)
     {

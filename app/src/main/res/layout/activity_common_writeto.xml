@@ -1,24 +1,168 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:background="#ffe6b3"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:backgroundTint="@color/white"
+    >
+
+    <FrameLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    tools:context=".commonWriteTo">
-
-    <TextView
-        android:id="@+id/existContents"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <EditText
-        android:id="@+id/addContents"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <Button
-        android:id="@+id/btnSendCommon"
+    android:layout_height="60dp"
+    android:background="@color/colorAccent"
+    >
+        <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="전송"/>
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="0dp"
+        android:src="@drawable/logo"
+        android:textColor="@color/colorAccent">
+        </ImageView>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="60dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/commonName"
+            android:layout_width="280dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:background="@null"
+            android:backgroundTint="#A5A5A5"
+            android:fontFamily="@font/cartoon"
+            android:textAlignment="center"
+            android:textColor="#172F57"
+            android:textColorHint="#172F57"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="320dp"
+            android:layout_height="480dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/border" />
+
+
+        <EditText
+            android:id="@+id/addContents"
+            android:layout_width="300dp"
+            android:layout_height="460dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="90dp"
+            android:background="@null"
+            android:fontFamily="@font/cartoon"
+            android:gravity="top"
+            android:hint="당신의 이야기를 공유해주세요!"
+            android:scrollbars="vertical"
+            android:textColor="#000000"
+            android:textColorHint="#5A5A5A"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+
+        <FrameLayout
+            android:layout_width="320dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="560dp">
+
+
+            <TextView
+                android:id="@+id/btnSendCommon"
+                android:layout_width="70dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="250dp"
+                android:fontFamily="@font/cartoon"
+                android:text="저장하기"
+                android:textSize="20dp" />
+
+
+        </FrameLayout>
+
+
+    </FrameLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="horizontal"
+    android:background="#ffffff"
+    android:layout_alignParentBottom="true"
+    android:layout_gravity="bottom">
+
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        >
+
+        <ImageView
+            android:id="@+id/chatbot"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/chatbot"></ImageView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        >
+        <ImageView
+            android:id="@+id/nakigi"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/nakigi"
+            >
+        </ImageView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:background="@color/colorAccent"
+        >
+        <ImageView
+            android:id="@+id/diary"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/diary_click"
+            >
+        </ImageView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        >
+
+        <ImageView
+            android:id="@+id/mypage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/mypage"></ImageView>
+    </RelativeLayout>
 </LinearLayout>
+
+</RelativeLayout>

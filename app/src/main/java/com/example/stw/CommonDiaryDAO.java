@@ -180,7 +180,7 @@ public class CommonDiaryDAO {
                 builder.append(inputLine);
             }
             result = builder.toString();
-            Log.i("invite", result);
+            Log.e("invite", result);
             in.close();
         }
         catch(Exception e)

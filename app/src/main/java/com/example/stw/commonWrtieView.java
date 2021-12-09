@@ -9,27 +9,34 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
-public class commonItemView extends LinearLayout {
+public class commonWrtieView extends LinearLayout {
 
-    TextView textTitle;
+    TextView textID, textMemory;
 
-    public commonItemView(Context context) {
+    public commonWrtieView(Context context) {
         super(context);
         init(context);
     }
 
-    public commonItemView(Context context, @Nullable AttributeSet attrs){
+    public commonWrtieView(Context context, @Nullable AttributeSet attrs){
         super(context, attrs);
     }
 
     private void init (Context context){
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.common_item_list,this,true);
+        inflater.inflate(R.layout.common_memory_list,this,true);
 
-        textTitle = findViewById(R.id.title);
+        textID = findViewById(R.id.user);
+        textMemory = findViewById(R.id.memory);
     }
 
-    public void setTitle(String title){
-        textTitle.setText(title);
+    public void setID(String ID)
+    {
+        textID.setText(ID);
+    }
+
+    public void setMemory(String memory)
+    {
+        textMemory.setText(memory);
     }
 }

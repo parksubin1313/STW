@@ -2,6 +2,7 @@ package com.example.stw;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -25,12 +26,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.concurrent.ExecutionException;
+import static com.example.stw.newLogin.access;
 
 public class commonWrite extends AppCompatActivity {
 
-    static String uid = "wlqkr23";
+    static String uid = access;
     String[] titles;
     int[] cid;
+    static int did;
 
     HashMap<Integer, String> cdiary;
 
@@ -39,6 +42,8 @@ public class commonWrite extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_common_write);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         setList list = new setList();
         try {
@@ -52,7 +57,6 @@ public class commonWrite extends AppCompatActivity {
 
         enjoyAdapter adapter = new enjoyAdapter();
 
-
         Iterator<Integer> keys = cdiary.keySet().iterator();
         int length = cdiary.size();
         titles = new String[length];
@@ -61,6 +65,7 @@ public class commonWrite extends AppCompatActivity {
         while(keys.hasNext()){
             int key = keys.next();
             adapter.addItem(new commonItem(cdiary.get(key)));
+            Log.e("join list",cdiary.get(key));
             titles[i] = cdiary.get(key);
             cid[i] = key;
             i++;
@@ -68,15 +73,16 @@ public class commonWrite extends AppCompatActivity {
 
         listView.setAdapter(adapter);
 
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView parent, View view, int position, long id) {
                 String clickTitle = titles[position];
                 Toast.makeText(getApplicationContext(), clickTitle, Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(commonWrite.this, commonWriteTo.class); //지금 액티비티에서 다른 액티비티로 이동하는 인텐트 설정
+                Intent intent = new Intent(commonWrite.this, commonWriteTo.class);
+                //Intent intent = new Intent(commonWrite.this, commonCommunity.class); //지금 액티비티에서 다른 액티비티로 이동하는 인텐트 설정
                 intent.putExtra("cdid", cid[position]);
+                did=cid[position];
                 startActivity(intent);  //인텐트 이동
                 finish();
 

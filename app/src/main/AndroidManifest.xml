@@ -17,10 +17,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.STW">
         <activity
-            android:name=".commonWriteTo"
+            android:name=".commonCommunity"
             android:exported="true" />
         <activity
-            android:name=".commonTitleList"
+            android:name=".commonWriteTo"
             android:exported="true" />
         <activity
             android:name=".commonWrite"
