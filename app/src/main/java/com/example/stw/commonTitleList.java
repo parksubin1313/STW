@@ -19,6 +19,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.channels.AsynchronousChannelGroup;
 import java.util.ArrayList;
 import static com.example.stw.newLogin.access;
 
@@ -30,6 +31,7 @@ public class commonTitleList extends AppCompatActivity {
     String fileName = "commonDiary.txt";
     String fTitle;
     int fDid;
+    String uid = "wlqkr23";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +63,7 @@ public class commonTitleList extends AppCompatActivity {
 
                 for(int i=0; i<comm.size(); i++)
                 {
-                    Log.e("/",comm.get(i).getTitle());
+                    Log.e("/",comm.get(i).getTitle()+"   "+comm.get(i).getHost());
                     title[i] = comm.get(i).getTitle();
                     did[i]=comm.get(i).getCid();
                 }
@@ -86,6 +88,9 @@ public class commonTitleList extends AppCompatActivity {
 
                         commonUpdate upDate = new commonUpdate();
                         upDate.execute();
+
+                        commonInvite cInvite = new commonInvite();
+                        cInvite.execute();
                     }
                 });
             }
@@ -178,6 +183,20 @@ public class commonTitleList extends AppCompatActivity {
             }
 
              */
+            return null;
+        }
+    }
+
+    public class commonInvite extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... params) {
+            try{
+                CommonDiaryDAO dao = new CommonDiaryDAO();
+                dao.invite(fDid, uid);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             return null;
         }
     }
