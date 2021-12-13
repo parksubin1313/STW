@@ -49,7 +49,7 @@ public class CommonDiaryDAO {
             }
 
             result = builder.toString();
-            Log.i("create", result);
+            Log.e("create", result);
             in.close();
 
 

@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.prolificinteractive.materialcalendarview.CalendarDay;
@@ -141,6 +142,16 @@ public class personalStorage extends AppCompatActivity implements OnDateSelected
                 diaryDelete dDelete = new diaryDelete();
                 dDelete.execute();
                 calendarView.addDecorator(new EventDecorator(Color.RED, dates));
+            }
+        });
+
+        ImageView bottomUserpage = (ImageView) findViewById(R.id.mypage);
+        bottomUserpage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(personalStorage.this, userPage.class);
+                startActivity(intent);
+                finish();
             }
         });
 

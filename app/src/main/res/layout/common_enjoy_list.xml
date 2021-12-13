@@ -32,6 +32,6 @@
         android:text="title"
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
-        android:textSize="30dp" />
+        android:textSize="15dp" />
 
 </RelativeLayout>

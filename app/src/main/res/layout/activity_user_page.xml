@@ -126,20 +126,29 @@
             android:layout_marginTop="230dp"
             android:orientation="horizontal"
             android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="10dp">
+            android:layout_marginLeft="5dp">
 
             <ImageView
                 android:id="@+id/nakigistorage"
-                android:layout_width="130dp"
+                android:layout_width="90dp"
                 android:layout_height="60dp"
                 android:src="@drawable/btnnakigi"></ImageView>
 
             <ImageView
                 android:id="@+id/diarystorage"
-                android:layout_width="130dp"
+                android:layout_width="90dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="10dp"
-                android:src="@drawable/btndiary"></ImageView>
+                android:src="@drawable/btndiary">
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/commondiarystorage"
+                android:layout_width="90dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/btncommondiary">
+            </ImageView>
 
         </LinearLayout>
 

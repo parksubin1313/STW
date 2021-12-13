@@ -29,7 +29,7 @@
             android:layout_height="400dp"
             android:layout_gravity="center"
             android:layout_marginBottom="3dp"
-            android:fontFamily="@font/applesdgothicneol"
+            android:fontFamily="@font/somsatang"
             android:gravity="center"
             android:textColor="#fff"
             android:textSize="20dp" />

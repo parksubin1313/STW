@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -20,9 +19,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 import static com.example.stw.newLogin.access;
-import static com.example.stw.commonWrite.did;
+import static com.example.stw.useCommonWrite.did;
 
-public class commonCommunity extends AppCompatActivity {
+
+public class useCommonCommunity extends AppCompatActivity {
 
     String uid = access;
     int cdid = did;
@@ -39,16 +39,6 @@ public class commonCommunity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
-
-        ImageView bottomUserpage = (ImageView) findViewById(R.id.mypage);
-        bottomUserpage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(commonCommunity.this, userPage.class);
-                startActivity(intent);
-                finish();
-            }
-        });
 
         listView = findViewById(R.id.listView);
         listView.setStackFromBottom(true);

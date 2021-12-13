@@ -56,6 +56,17 @@ public class userPage extends AppCompatActivity {
             }
         });
 
+        ImageView commondiarystorage = findViewById(R.id.commondiarystorage);
+        commondiarystorage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(userPage.this, useCommonWrite.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
         //------하단바------
         ImageView bottomNakigi = (ImageView) findViewById(R.id.nakigi);
         bottomNakigi.setOnClickListener(new View.OnClickListener() {

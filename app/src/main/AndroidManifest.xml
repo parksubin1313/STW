@@ -17,6 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.STW">
         <activity
+            android:name=".useCommonCommunity"
+            android:exported="true" />
+        <activity
+            android:name=".useCommonWrite"
+            android:exported="true" />
+        <activity
             android:name=".commonCommunity"
             android:exported="true" />
         <activity

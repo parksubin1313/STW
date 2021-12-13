@@ -1,25 +1,25 @@
 
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:background="#ffe6b3"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="vertical"
-android:backgroundTint="@color/white"
+    android:background="#ffe6b3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:backgroundTint="@color/white"
     >
 
     <FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="60dp"
-    android:background="@color/colorAccent"
-    >
-        <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="0dp"
-        android:src="@drawable/logo"
-        android:textColor="@color/colorAccent">
+        android:background="@color/colorAccent"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/logo"
+            android:textColor="@color/colorAccent">
         </ImageView>
 
     </FrameLayout>
@@ -53,7 +53,7 @@ android:backgroundTint="@color/white"
 
         <TextView
             android:layout_width="320dp"
-            android:layout_height="480dp"
+            android:layout_height="400dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="80dp"
             android:background="@drawable/border" />
@@ -62,7 +62,7 @@ android:backgroundTint="@color/white"
         <EditText
             android:id="@+id/addContents"
             android:layout_width="300dp"
-            android:layout_height="460dp"
+            android:layout_height="380dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="90dp"
             android:background="@null"
@@ -80,7 +80,7 @@ android:backgroundTint="@color/white"
             android:layout_width="320dp"
             android:layout_height="20dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="560dp">
+            android:layout_marginTop="480dp">
 
 
             <TextView
@@ -98,71 +98,71 @@ android:backgroundTint="@color/white"
 
     </FrameLayout>
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="60dp"
-    android:orientation="horizontal"
-    android:background="#ffffff"
-    android:layout_alignParentBottom="true"
-    android:layout_gravity="bottom">
-
-    <RelativeLayout
-        android:layout_width="100dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_weight="1"
-        >
+        android:orientation="horizontal"
+        android:background="#ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom">
 
-        <ImageView
-            android:id="@+id/chatbot"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_centerInParent="true"
-            android:src="@drawable/chatbot"></ImageView>
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:layout_weight="1"
-        >
-        <ImageView
-            android:id="@+id/nakigi"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/nakigi"
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
             >
-        </ImageView>
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:layout_weight="1"
-        android:background="@color/colorAccent"
-        >
-        <ImageView
-            android:id="@+id/diary"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/diary_click"
-            >
-        </ImageView>
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:layout_weight="1"
-        >
 
-        <ImageView
-            android:id="@+id/mypage"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_centerInParent="true"
-            android:src="@drawable/mypage"></ImageView>
-    </RelativeLayout>
-</LinearLayout>
+            <ImageView
+                android:id="@+id/chatbot"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/chatbot"></ImageView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            >
+            <ImageView
+                android:id="@+id/nakigi"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/nakigi"
+                >
+            </ImageView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:background="@color/colorAccent"
+            >
+            <ImageView
+                android:id="@+id/diary"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/diary_click"
+                >
+            </ImageView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:id="@+id/mypage"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/mypage"></ImageView>
+        </RelativeLayout>
+    </LinearLayout>
 
 </RelativeLayout>

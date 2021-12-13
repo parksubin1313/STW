@@ -111,7 +111,7 @@
             android:layout_width="100dp"
             android:layout_height="60dp"
             android:layout_weight="1"
-            android:background="#172F57"
+
             >
             <ImageView
                 android:id="@+id/nakigi"
@@ -119,7 +119,7 @@
                 android:layout_height="50dp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/nakigi_click"
+                android:src="@drawable/nakigi"
                 >
             </ImageView>
         </RelativeLayout>
@@ -127,6 +127,7 @@
             android:layout_width="100dp"
             android:layout_height="60dp"
             android:layout_weight="1"
+            android:background="#172F57"
             >
             <ImageView
                 android:id="@+id/diary"
@@ -134,7 +135,7 @@
                 android:layout_height="50dp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/diary"
+                android:src="@drawable/diary_click"
                 >
             </ImageView>
         </RelativeLayout>

@@ -74,7 +74,7 @@
 
         <TextView
             android:layout_width="320dp"
-            android:layout_height="230dp"
+            android:layout_height="400dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="80dp"
             android:background="@drawable/border" />
@@ -82,7 +82,7 @@
         <EditText
             android:id="@+id/memory"
             android:layout_width="300dp"
-            android:layout_height="210dp"
+            android:layout_height="390dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="90dp"
             android:background="@null"
@@ -100,7 +100,7 @@
             android:layout_width="320dp"
             android:layout_height="20dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="310dp">
+            android:layout_marginTop="480dp">
 
             <TextView
                 android:id="@+id/save"
@@ -113,30 +113,6 @@
 
         </FrameLayout>
 
-
-        <ImageView
-            android:id="@+id/btnTopic"
-            android:layout_width="200dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="360dp"
-            android:src="@drawable/callai"></ImageView>
-
-        <TextView
-            android:id="@+id/topic"
-            android:layout_width="280dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="420dp"
-            android:background="@null"
-            android:backgroundTint="#A5A5A5"
-            android:fontFamily="@font/cartoon"
-            android:hint="추천된 주제 나오는 칸"
-            android:textAlignment="center"
-            android:textColor="#6f6f6f"
-            android:textColorHint="#172F57"
-            android:textSize="15dp"
-            android:textStyle="bold" />
 
     </FrameLayout>
 

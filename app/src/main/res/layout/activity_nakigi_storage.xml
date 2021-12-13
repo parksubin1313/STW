@@ -60,7 +60,7 @@
             android:id="@+id/memory"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:layout_marginTop="450dp"
+            android:layout_marginTop="430dp"
             android:ems="10"
             android:textSize="18dp"
             android:layout_gravity="center_horizontal"/>
@@ -72,7 +72,7 @@
             android:layout_width="280dp"
             android:layout_height="20dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="520dp"
+            android:layout_marginTop="490dp"
             android:src="@drawable/delete"></ImageView>
 
     </FrameLayout>
