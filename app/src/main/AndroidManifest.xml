@@ -66,16 +66,7 @@
             android:exported="true"
             android:theme="@android:style/Theme.Dialog" />
         <activity
-            android:name=".checkNakigi"
-            android:exported="true" />
-        <activity
             android:name=".nakigi"
-            android:exported="true" />
-        <activity
-            android:name=".signup"
-            android:exported="true" />
-        <activity
-            android:name=".login"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
