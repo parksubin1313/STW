@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.STW">
         <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
             android:name=".useCommonCommunity"
             android:exported="true" />
         <activity
@@ -69,7 +72,7 @@
             android:name=".nakigi"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".chatbot"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
