@@ -26,7 +26,7 @@ public class DiaryDAO {
     public boolean create(String content, String userid) {
         String result = null;
         try {
-            URL url = new URL("http://3.35.47.128/diary/create/"+userid);
+            URL url = new URL("http://3.38.181.62/diary/create/"+userid);
             JSONObject json = new JSONObject();
             json.put("userid", userid);
             json.put("contents", content);
@@ -80,7 +80,7 @@ public class DiaryDAO {
             JSONObject json = new JSONObject();
             json.put("contents", contents);
 
-            URL url = new URL("http://3.35.47.128/diary/update/"+did);
+            URL url = new URL("http://3.38.181.62/diary/update/"+did);
             String body = json.toString();
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
@@ -127,7 +127,7 @@ public class DiaryDAO {
         String result = null;
         try{
 
-            URL url = new URL("http://3.35.47.128/diary/delete/"+did);
+            URL url = new URL("http://3.38.181.62/diary/delete/"+did);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Length", "length");
@@ -170,7 +170,7 @@ public class DiaryDAO {
     public static ArrayList<DiaryDTO> read(String userid){
         ArrayList<DiaryDTO> diary = new ArrayList<DiaryDTO>();
         try{
-            URL url = new URL("http://3.35.47.128/diary/read/"+userid);
+            URL url = new URL("http://3.38.181.62/diary/read/"+userid);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             InputStream is = conn.getInputStream();

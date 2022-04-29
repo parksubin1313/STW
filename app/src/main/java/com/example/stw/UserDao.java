@@ -13,7 +13,7 @@ public class UserDao {
     {
         String result = null;
         try {
-            URL url=new URL("http://3.35.47.128/sign-up");
+            URL url=new URL("http://3.38.181.62/sign-up");
             JSONObject json = new JSONObject();
             json.put("userid",dt.getUserid());
             json.put("password",dt.getPassword());
@@ -57,7 +57,7 @@ public class UserDao {
         String access_token="";
         try
         {
-            URL url = new URL("http://3.35.47.128/login");
+            URL url = new URL("http://3.38.181.62/login");
             JSONObject json = new JSONObject();
             json.put("userid",userid);
             json.put("password", password);
@@ -96,7 +96,7 @@ public class UserDao {
         UserDTO myD=new UserDTO();
 
         try {
-            URL url = new URL("http://3.35.47.128/mypage/" + userid);
+            URL url = new URL("http://3.38.181.62/mypage/" + userid);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             InputStream is = conn.getInputStream();

@@ -20,7 +20,7 @@ public class CommonDiaryDAO {
     public  boolean create (String ccontents, String userid, String dtitle) {
         String result = null;
         try {
-            URL url = new URL("http://3.35.47.128/diary/commoncreate/"+userid);
+            URL url = new URL("http://3.38.181.62/diary/commoncreate/"+userid);
             JSONObject json = new JSONObject();
             json.put("ccontents",ccontents);
             json.put("title",dtitle);
@@ -74,7 +74,7 @@ public class CommonDiaryDAO {
     {
         String result = null;
         try {
-            URL url = new URL("http://3.35.47.128/diary/updatecommon/" + diary_id);
+            URL url = new URL("http://3.38.181.62/diary/updatecommon/" + diary_id);
             JSONObject json = new JSONObject();
             json.put("content", contents);
             //json.put("contents", diary.get_content());
@@ -120,7 +120,7 @@ public class CommonDiaryDAO {
     {
         ArrayList<CommonDiaryDTO> comm = new ArrayList<CommonDiaryDTO>();
         try {
-            URL url = new URL("http://3.35.47.128/diary/readC/" + userid);
+            URL url = new URL("http://3.38.181.62/diary/readC/" + userid);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             InputStream is = conn.getInputStream();
@@ -155,7 +155,7 @@ public class CommonDiaryDAO {
     {
         String result = null;
         try {
-            URL url = new URL("http://3.35.47.128/diary/invite/"+id);
+            URL url = new URL("http://3.38.181.62/diary/invite/"+id);
             JSONObject json = new JSONObject();
             json.put("invite", invited);
             //json.put("contents", diary.get_content());
@@ -201,7 +201,7 @@ public class CommonDiaryDAO {
     {
         ArrayList<CommonDiaryDTO> comm = new ArrayList<CommonDiaryDTO>();
         try {
-            URL url = new URL("http://3.35.47.128/diary/commonlist");
+            URL url = new URL("http://3.38.181.62/diary/commonlist");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             InputStream is = conn.getInputStream();
