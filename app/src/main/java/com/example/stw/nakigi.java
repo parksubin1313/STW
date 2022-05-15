@@ -98,8 +98,6 @@ public class nakigi extends AppCompatActivity {
         }, mYear, mMonth, mDay);
 
 
-
-
         timer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -122,6 +120,16 @@ public class nakigi extends AppCompatActivity {
         });
 
         //------하단바------
+        ImageView bottomChatbot = (ImageView) findViewById((R.id.chatbot));
+        bottomChatbot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(nakigi.this, chatbot.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         ImageView bottomUserpage = (ImageView) findViewById(R.id.mypage);
         bottomUserpage.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -68,6 +68,16 @@ public class userPage extends AppCompatActivity {
 
 
         //------하단바------
+        ImageView bottomChatbot = (ImageView) findViewById((R.id.chatbot));
+        bottomChatbot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(userPage.this, chatbot.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         ImageView bottomNakigi = (ImageView) findViewById(R.id.nakigi);
         bottomNakigi.setOnClickListener(new View.OnClickListener() {
             @Override

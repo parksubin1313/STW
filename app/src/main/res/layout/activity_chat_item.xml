@@ -6,18 +6,20 @@
 
     <!--android:textAlignment="textEnd" 왼쪽 , 오른쪽 정렬-->
     <TextView
-        android:textSize="12sp"
-        android:id="@+id/TextView_nickname"
+        android:textSize="10dp"
+        android:id="@+id/TextView_nick"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:fontFamily="@font/applesdgothicneol"
-        android:layout_weight="1"/>
-
+        android:textColor="@color/black"
+        android:layout_height="match_parent"
+        android:padding="5dp"/>
     <TextView
-        android:textSize="20sp"
+        android:textSize="15dp"
         android:id="@+id/TextView_msg"
         android:layout_width="match_parent"
         android:fontFamily="@font/applesdgothicneol"
-        android:layout_height="match_parent"/>
+        android:textColor="@color/black"
+        android:layout_height="match_parent"
+        android:padding="10dp"/>
 
 </LinearLayout>

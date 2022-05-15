@@ -90,6 +90,16 @@ public class personalDiary extends AppCompatActivity {
 
 
         //------하단바------
+        ImageView bottomChatbot = (ImageView) findViewById((R.id.chatbot));
+        bottomChatbot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(personalDiary.this, chatbot.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         ImageView bottomUserpage = (ImageView) findViewById(R.id.mypage);
         bottomUserpage.setOnClickListener(new View.OnClickListener() {
             @Override

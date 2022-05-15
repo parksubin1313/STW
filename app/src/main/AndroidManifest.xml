@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.STW">
         <activity
-            android:name=".MainActivity"
+            android:name=".chatbot"
             android:exported="true" />
         <activity
             android:name=".useCommonCommunity"
@@ -53,9 +53,6 @@
             android:name=".newSignup"
             android:exported="true" />
         <activity
-            android:name=".newLogin"
-            android:exported="true" />
-        <activity
             android:name=".userPage"
             android:exported="true" />
         <activity
@@ -72,7 +69,7 @@
             android:name=".nakigi"
             android:exported="true" />
         <activity
-            android:name=".chatbot"
+            android:name=".newLogin"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

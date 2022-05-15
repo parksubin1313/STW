@@ -71,7 +71,7 @@ public class newLogin extends AppCompatActivity {
                 if(access.equals(loginID))
                 {
                     //Toast.makeText(newLogin.this, "로그인 성공", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(newLogin.this, nakigi.class);
+                    Intent intent = new Intent(newLogin.this, chatbot.class);
                     startActivity(intent);
                     finish();
                 }

@@ -1,6 +1,7 @@
 package com.example.stw;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +26,7 @@ public class chatAdapter extends RecyclerView.Adapter<chatAdapter.MyViewHolder> 
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            nick = itemView.findViewById(R.id.TextView_msg);
+            nick = itemView.findViewById(R.id.TextView_nick);
             msg = itemView.findViewById(R.id.TextView_msg);
             rootView = itemView;
 
@@ -55,14 +56,17 @@ public class chatAdapter extends RecyclerView.Adapter<chatAdapter.MyViewHolder> 
 
         chatData chat = chatList.get(position);
 
-        holder.nick.setText(chat.getNickname());
+        //holder.nick.setText(chat.getNickname());
         holder.msg.setText(chat.getMsg());
 
-        if(chat.getNickname().equals(this.nick1)){
+        if(chat.getNickname().equals("user")){
             holder.msg.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_END);
         }
         else{
             holder.msg.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_START);
+            holder.nick.setText("Sharry");
+            holder.msg.setTextColor(Color.parseColor("#172F57"));
+            holder.nick.setTextColor(Color.parseColor("#172F57"));
         }
     }
 

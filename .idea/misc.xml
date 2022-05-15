@@ -19,7 +19,7 @@
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_calendar.xml" value="0.176" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_chat.xml" value="0.15625" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_chat_item.xml" value="0.24947916666666667" />
-        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_chatbot.xml" value="0.24890829694323144" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_chatbot.xml" value="0.1" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_check_nakigi.xml" value="0.1" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_common_community.xml" value="0.19882246376811594" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_common_create.xml" value="0.23802083333333332" />
@@ -31,6 +31,8 @@
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_common_write.xml" value="0.1546875" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_common_writeto.xml" value="0.1" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_diary.xml" value="0.10625" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_list_rf.xml" value="0.1" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_list_rfitem.xml" value="0.23385416666666667" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_main.xml" value="0.2390625" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_nakigi.xml" value="0.1" />
@@ -41,6 +43,7 @@
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_new_signup.xml" value="0.1" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_personal_diary.xml" value="0.176" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_personal_storage.xml" value="0.264" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_setting_rf.xml" value="0.16875" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_signup.xml" value="0.1" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_test.xml" value="0.1046875" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/STW/app/src/main/res/layout/activity_user_page.xml" value="0.234375" />
